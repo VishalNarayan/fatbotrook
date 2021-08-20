@@ -202,4 +202,7 @@ class XBoardEngine(EngineWrapper):
 
 def getHomemadeEngine(name):
     import strategies
+    #import engines.fatbotrook
     return eval(f"strategies.{name}")
+    #print('hi')
+    #return eval(f"fatbotrook.{name}")

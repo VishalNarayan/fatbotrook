@@ -1,0 +1,44 @@
+OBESERVATIONS
+
+LIMIT OPPONENTS PLAY: 
+	- lost queen early because it kept trying to check and attack the king with no support
+
+	- stalemate and checkmate are equally successful, bc they limit opp's moves
+
+	-- want to prioritize checkmating the opponent
+		if there is a move that checks, prioritize it
+
+
+
+LIMIT OPPONENT'S PLAY WITH MINIMAX: 
+	- consistently goes for the four move checkmate
+	- but it seems to keep playing moves that draw for some reason 
+	- still hangs some free pieces 
+
+	--- going to bring back the material evaluation, so that it doesn't drop pieces
+
+
+
+LIMIT_OPP X MATERIAL X MINIMAX @ depth 3: 
+	- plays much better now, doesn't unnecessarily sacrifice pieces
+
+	- for some reason, even when it has a clear checkmate, it evaluates another move as better. I think one reason for this might be that it sees two paths: 
+		one path leads to checkmate after some redundant moves
+		another path is immediate checkmate
+
+		but since the second path has nothing to offer in terms of my current position evaluation, fatbot sticks with its original path and plays that move
+
+		--- which means that I have to also give worth to a smaller path. In other words, if I get a previously-reached score by going less deep into the tree, choose that move.
+
+
+
+
+LIMIT_OPP X MATERIAL X MINIMAX x ALPHABETA @ depth 4: 
+	- fatbot takes a lottt more time to play moves
+		--- hopefully I can speed this up by evaluating better moves first 
+
+	- I still run into the same issue here. It had a clear checkmate, yet chose a different path. 
+		-- next steps: 
+			evaluate better moves first
+			opt for smaller depth (although this might just be solved by 	previous)
+			
