@@ -153,7 +153,7 @@ class VishalMove(ExampleEngine):
         oppChoicesScore = self.evalOppChoices(board)
         materialScore = self.evalMaterial(board)
 
-        print('oppChoices', oppChoicesScore, 'material', materialScore)
+        #print('oppChoices', oppChoicesScore, 'material', materialScore)
         return oppChoicesScore + materialScore
 
     def limit_play(self, board, *args):
@@ -247,7 +247,7 @@ class VishalMove(ExampleEngine):
         # minimum # of opponent moves (limit_play)
         #return self.limit_play(board, *args)
 
-        return self.minimaxRoot(0, 4, -math.inf, math.inf, board)
+        return self.minimaxRoot(0, 3, -math.inf, math.inf, board)
 
 
         # MINIMAX EXCEPT DON'T CONSIDER THE OTHER PLAYER'S MOVES
