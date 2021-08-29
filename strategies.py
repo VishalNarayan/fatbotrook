@@ -223,6 +223,7 @@ class VishalMove(ExampleEngine):
                 board.push(move)
                 val = self.minimax(depth+1, limit, alpha, beta, board)
                 board.pop()
+                print('val', val)
                 if val > bestScore:
 
                     bestScore = val
@@ -237,6 +238,10 @@ class VishalMove(ExampleEngine):
                     bestScore = val
                     bestMove = move
                     print('changing best move', move, 'score', bestScore)
+
+        if bestMove is None: # if there's only one move left, play it
+            print(f"I have {len(moves)} moves left")
+            bestMove = moves[0]
 
         return bestMove
     def search(self, board, *args):
