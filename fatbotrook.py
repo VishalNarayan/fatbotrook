@@ -4,6 +4,8 @@ import random
 
 
 class FatBotEngine:
+    def __init__(self, depth=3):
+        self.depth = depth
     '''
     METRICS: 
         - material
@@ -51,8 +53,8 @@ class FatBotEngine:
         oppChoicesScore = self.evalOppChoices(board)
         materialScore = self.evalMaterial(board)
 
-        #print('oppChoices', oppChoicesScore, 'material', materialScore)
-        return oppChoicesScore + materialScore
+        print('oppChoices', oppChoicesScore, 'material', materialScore)
+        return 5*oppChoicesScore + materialScore
 
 
     def minimax(self, depth, limit, alpha, beta, board):
@@ -120,4 +122,4 @@ class FatBotEngine:
 
 
     def search(self, board):
-        return self.minimaxRoot(0, 3, -math.inf, math.inf, board)
+        return self.minimaxRoot(0, self.depth, -math.inf, math.inf, board)

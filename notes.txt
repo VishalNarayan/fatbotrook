@@ -41,4 +41,7 @@ LIMIT_OPP X MATERIAL X MINIMAX x ALPHABETA @ depth 4:
 		-- next steps: 
 			evaluate better moves first
 			opt for smaller depth (although this might just be solved by 	previous)
-			
+
+
+	- ISSUE:
+		when bot is about to be checkmated, it hangs and does not play a move. 
